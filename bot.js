@@ -2,6 +2,7 @@ const { Client } = require('discord.js-selfbot-v13');
 
 // ====== CONFIGURATION ======
 const PRIMARY_OWNERS = ['1271810399171510372']; // <-- SET YOUR PRIMARY OWNER IDs HERE
+const ALLOWED_CHANNEL_ID = '1492736790954770652'; // Only this channel accepts commands
 let secondaryOwners = [];
 
 // ====== STATE ======
@@ -57,6 +58,11 @@ function handleCommand(message, client) {
   const prefix = '!';
   if (!message.content.startsWith(prefix)) return;
   if (message.author.bot) return;
+
+  // Only allow commands in the designated channel
+  if (message.channel.id !== ALLOWED_CHANNEL_ID) {
+    return;
+  }
 
   const args = message.content.slice(prefix.length).trim().split(/ +/);
   const command = args.shift().toLowerCase();
