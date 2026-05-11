@@ -3,17 +3,10 @@
   "version": "1.0.0",
   "description": "Multi-bot Discord automation suite",
   "main": "index.js",
-
   "scripts": {
     "start": "bash start.sh"
   },
-
-  "engines": {
-    "node": "20.x"
-  },
-
   "dependencies": {
-    "discord.js-selfbot-v13": "^3.4.0",
-    "debug": "^4.4.1"
+    "discord.js-selfbot-v13": "^3.4.0"
   }
 }
